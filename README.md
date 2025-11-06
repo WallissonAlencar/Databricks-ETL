@@ -4,21 +4,20 @@ Extração de dados do uber eats
 Este projeto tem como objetivo automatizar o processo de ingestão, transformação e análise de dados do Uber Eats utilizando o Databricks como plataforma principal de dados.
 A arquitetura segue o padrão ELT (Extract, Load, Transform), aproveitando o poder do Delta Lake, PySpark e notebooks Databricks para garantir escalabilidade e performance.
 
-┌────────────────────────┐
-│  Fonte de Dados (API / CSV / S3) │
-└──────────────┬─────────┘
-               │
-        [EXTRACT]
-               │
-        Databricks Ingestion
-               │
-        [LOAD - Bronze Layer]
-               │
-        Delta Tables
-               │
-        [TRANSFORM - Silver/Gold Layers]
-               │
-        Dashboards / BI / ML
+elt-uber-eats-analytics-semana/
+│
+├── notebooks/
+│   ├── 01_extract_data.py
+│   ├── 02_load_bronze_delta.py
+│   ├── 03_transform_silver_gold.py
+│   └── 04_kpi_analysis.py
+│
+├── requirements.txt
+├── README.md
+└── utils/
+    └── helpers.py
+
+
 
         Etapas Principais do ELT
 
